@@ -338,7 +338,7 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
      */
     public void startPlaying(String file) {
         if (this.readyPlayer(file) && this.player != null) {
-               this.player.setAudioStreamType(AudioManager.STREAM_ALARM);
+               this.player.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
  
             this.player.start();
             this.setState(STATE.MEDIA_RUNNING);
