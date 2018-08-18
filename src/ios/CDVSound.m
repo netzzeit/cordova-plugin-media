@@ -373,7 +373,7 @@ BOOL keepAvAudioSessionAlwaysActive = NO;
                 }
 
                 //NSString* sessionCategory = bPlayAudioWhenScreenIsLocked ? AVAudioSessionCategoryPlayback : AVAudioSessionCategorySoloAmbient;
-                NSString* sessionCategory = AVAudioSessionCategoryAmbient; working on IOS10 not IOS11
+                NSString* sessionCategory = AVAudioSessionCategoryAmbient; //working on IOS10 not IOS11
                 //NSString* sessionCategory = AVAudioSessionCategoryPlayback; 
                 [self.avSession setCategory:sessionCategory error:&err];
                 /*if (![self.avSession.category isEqualToString:AVAudioSessionCategoryPlayAndRecord]) { 
