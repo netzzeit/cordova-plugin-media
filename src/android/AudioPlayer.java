@@ -701,6 +701,7 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
                     this.player.setDataSource(Environment.getExternalStorageDirectory().getPath() + "/" + file);
                 }
             }
+               this.player.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
                 this.setState(STATE.MEDIA_STARTING);
                 this.player.setOnPreparedListener(this);
                 this.player.prepare();
