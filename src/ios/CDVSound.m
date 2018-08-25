@@ -376,12 +376,8 @@ BOOL keepAvAudioSessionAlwaysActive = NO;
                 //NSString* sessionCategory = AVAudioSessionCategoryAmbient; //working
                 //[self.avSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionDuckOthers | AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers | AVAudioSessionCategoryOptionAllowBluetooth error:nil];
                
-                [self.avSession setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionAllowBluetooth error:nil];
-                [self.avSession setActive:YES error:nil];
-             
-                //NSString* sessionCategory = AVAudioSessionCategoryAmbient; //working
-                //[self.avSession setCategory:AVAudioSessionCategoryAmbient withOptions:AVAudioSessionCategoryOptionDuckOthers | AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers  | AVAudioSessionCategoryOptionAllowBluetooth error:nil];
-                  
+                [self.avSession setCategory:AVAudioSessionCategoryPlaybackAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionAllowBluetooth|AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers error:nil];
+  
              
                 if (![self.avSession setActive:YES error:&err]) {
                     // other audio with higher priority that does not allow mixing could cause this to fail
