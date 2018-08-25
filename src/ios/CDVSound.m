@@ -376,8 +376,11 @@ BOOL keepAvAudioSessionAlwaysActive = NO;
                 //NSString* sessionCategory = AVAudioSessionCategoryAmbient; //working
                 //[self.avSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionDuckOthers | AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers | AVAudioSessionCategoryOptionAllowBluetooth error:nil];
                
-                NSString* sessionCategory = AVAudioSessionCategoryAmbient; //working
-                [self.avSession setCategory:AVAudioSessionCategoryAmbient withOptions:AVAudioSessionCategoryOptionDuckOthers | AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers  | AVAudioSessionCategoryOptionAllowBluetooth error:nil];
+                [self.avSession setCategory:AVAudioSessionCategoryPlayAndRecord  withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionDefaultToSpeaker|AVAudioSessionCategoryOptionAllowBluetooth error:nil];
+                [self.avSession setActive:YES error:nil];
+             
+                //NSString* sessionCategory = AVAudioSessionCategoryAmbient; //working
+                //[self.avSession setCategory:AVAudioSessionCategoryAmbient withOptions:AVAudioSessionCategoryOptionDuckOthers | AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers  | AVAudioSessionCategoryOptionAllowBluetooth error:nil];
                   
              
                 if (![self.avSession setActive:YES error:&err]) {
