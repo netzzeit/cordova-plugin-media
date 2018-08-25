@@ -372,15 +372,14 @@ BOOL keepAvAudioSessionAlwaysActive = NO;
                     bPlayAudioWhenScreenIsLocked = [playAudioWhenScreenIsLocked boolValue];
                 }
 
-                //NSString* sessionCategory = bPlayAudioWhenScreenIsLocked ? AVAudioSessionCategoryPlayback : AVAudioSessionCategorySoloAmbient;
-                NSString* sessionCategory = AVAudioSessionCategoryAmbient; //working on IOS10 not IOS11
-                //NSString* sessionCategory = AVAudioSessionCategoryPlayback; 
-                //[self.avSession setCategory:sessionCategory error:&err];
-                [self.avSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionDuckOthers | AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers | AVAudioSessionCategoryOptionAllowBluetooth error:nil];
-    
-                /*if (![self.avSession.category isEqualToString:AVAudioSessionCategoryPlayAndRecord]) { 
-                 [self.avSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers | AVAudioSessionCategoryOptionDefaultToSpeaker error:nil]; 
-                } */               
+                // WORKING
+                //NSString* sessionCategory = AVAudioSessionCategoryAmbient; //working
+                //[self.avSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionDuckOthers | AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers | AVAudioSessionCategoryOptionAllowBluetooth error:nil];
+               
+                NSString* sessionCategory = AVAudioSessionCategoryAmbient; //working
+                [self.avSession setCategory:AVAudioSessionCategoryAmbient withOptions:AVAudioSessionCategoryOptionDuckOthers | AVAudioSessionCategoryOptionDefaultToSpeaker  | AVAudioSessionCategoryOptionAllowBluetooth error:nil];
+                  
+             
                 if (![self.avSession setActive:YES error:&err]) {
                     // other audio with higher priority that does not allow mixing could cause this to fail
                     NSLog(@"Unable to play audio: %@", [err localizedFailureReason]);
