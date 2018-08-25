@@ -376,7 +376,7 @@ BOOL keepAvAudioSessionAlwaysActive = NO;
                 NSString* sessionCategory = AVAudioSessionCategoryAmbient; //working on IOS10 not IOS11
                 //NSString* sessionCategory = AVAudioSessionCategoryPlayback; 
                 //[self.avSession setCategory:sessionCategory error:&err];
-                [self.avSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionDuckOthers | AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers error:nil];
+                [self.avSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionDuckOthers | AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers | AVAudioSessionCategoryOptionAllowBluetooth error:nil];
     
                 /*if (![self.avSession.category isEqualToString:AVAudioSessionCategoryPlayAndRecord]) { 
                  [self.avSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers | AVAudioSessionCategoryOptionDefaultToSpeaker error:nil]; 
